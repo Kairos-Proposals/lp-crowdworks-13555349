@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairosからのご提案｜コーポレートサイトリニューアル for 熊本の水道・配管資材卸売企業様</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E3253;
+    --navy-deep:#081E33;
+    --pipe:#5C7A89;
+    --water:#3F9DD1;
+    --water-light:#7FC4E6;
+    --aqua-bg:#E3F3F7;
+    --copper:#C97B4A;
+    --copper-deep:#A85C32;
+    --white:#FBFEFF;
+    --ink:#1C2B36;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.8;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Noto Sans JP', sans-serif;
+    font-weight:900;
+    color:var(--navy);
+  }
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  a{color:inherit;}
+
+  /* ===== ヒーロー ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:linear-gradient(160deg,var(--navy-deep) 0%, var(--navy) 55%, #114469 100%);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    color:var(--white);
+    padding:120px 0 80px;
+  }
+  .ripple{
+    position:absolute;
+    border-radius:50%;
+    border:1.5px solid rgba(127,196,230,0.35);
+    animation:rippleOut 6s ease-out infinite;
+  }
+  @keyframes rippleOut{
+    0%{transform:scale(0.3);opacity:0.9;}
+    100%{transform:scale(1.4);opacity:0;}
+  }
+  .ripple.r1{width:240px;height:240px;top:-60px;right:-40px;}
+  .ripple.r2{width:240px;height:240px;top:-60px;right:-40px;animation-delay:2s;}
+  .ripple.r3{width:240px;height:240px;top:-60px;right:-40px;animation-delay:4s;}
+  .ripple.r4{width:160px;height:160px;bottom:10%;left:-30px;}
+  .ripple.r5{width:160px;height:160px;bottom:10%;left:-30px;animation-delay:2.5s;}
+
+  .pipeline{
+    position:absolute;
+    left:0;right:0;bottom:60px;
+    height:14px;
+    background:repeating-linear-gradient(90deg, var(--pipe) 0 90px, #3E5663 90px 96px);
+    opacity:0.5;
+  }
+  .pipeline::before,.pipeline::after{
+    content:"";
+    position:absolute;
+    top:-9px;width:24px;height:32px;
+    background:var(--pipe);
+    border-radius:4px;
+    opacity:0.8;
+  }
+  .pipeline::before{left:18%;}
+  .pipeline::after{left:68%;}
+
+  .hero-inner{position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    letter-spacing:0.14em;
+    color:var(--water-light);
+    border:1px solid rgba(127,196,230,0.5);
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;border-radius:50%;
+    background:var(--copper);
+    display:inline-block;
+  }
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(32px,5vw,58px);
+    line-height:1.5;
+    letter-spacing:0.02em;
+    margin-bottom:28px;
+  }
+  .hero h1 span{
+    color:var(--water-light);
+    display:inline-block;
+  }
+  .hero p.lead{
+    max-width:620px;
+    font-size:16px;
+    color:#CFE6F0;
+    margin-bottom:12px;
+  }
+  .hero .from{
+    margin-top:40px;
+    font-size:14px;
+    color:#9FC6DC;
+    letter-spacing:0.05em;
+  }
+  .hero .from strong{
+    color:var(--white);
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:700;
+  }
+
+  /* ===== セクション共通 ===== */
+  section{padding:100px 0;}
+  .section-head{
+    text-align:center;
+    margin-bottom:60px;
+  }
+  .section-tag{
+    font-size:13px;
+    letter-spacing:0.2em;
+    color:var(--copper-deep);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .section-head h2{
+    font-size:clamp(24px,3.6vw,36px);
+    line-height:1.5;
+  }
+  .section-head p{
+    margin-top:18px;
+    color:#50626E;
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* ===== 理解セクション ===== */
+  .understand{
+    background:var(--aqua-bg);
+    position:relative;
+  }
+  .understand::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:6px;
+    background:repeating-linear-gradient(90deg,var(--water) 0 40px, var(--copper) 40px 44px, var(--water) 44px 80px);
+  }
+  .quote-card{
+    background:var(--white);
+    border-radius:18px;
+    padding:48px;
+    box-shadow:0 20px 50px -20px rgba(14,50,83,0.25);
+    position:relative;
+    border-left:6px solid var(--water);
+  }
+  .quote-card p{
+    font-size:17px;
+    color:var(--ink);
+    margin-bottom:18px;
+  }
+  .quote-card p:last-child{margin-bottom:0;}
+  .quote-mark{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:60px;
+    color:var(--water-light);
+    line-height:1;
+    font-weight:900;
+    margin-bottom:10px;
+  }
+  .keyword-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:30px;
+  }
+  .keyword-row span{
+    background:var(--navy);
+    color:#CFE6F0;
+    font-size:13px;
+    padding:7px 16px;
+    border-radius:999px;
+    font-family:'Noto Sans JP',sans-serif;
+  }
+
+  /* ===== 価値セクション ===== */
+  .values{background:var(--white);}
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .value-card{
+    background:#F6FBFD;
+    border:1px solid #DCEBF1;
+    border-radius:16px;
+    padding:36px 28px;
+    position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .value-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px -16px rgba(14,50,83,0.25);
+  }
+  .valve{
+    width:46px;height:46px;
+    border-radius:50%;
+    background:var(--navy);
+    position:relative;
+    margin-bottom:22px;
+  }
+  .valve::before,.valve::after{
+    content:"";
+    position:absolute;
+    background:var(--water-light);
+  }
+  .valve::before{
+    top:50%;left:10%;right:10%;height:4px;transform:translateY(-50%);
+  }
+  .valve::after{
+    left:50%;top:10%;bottom:10%;width:4px;transform:translateX(-50%);
+  }
+  .value-card h3{
+    font-size:18px;
+    margin-bottom:12px;
+  }
+  .value-card p{
+    font-size:14.5px;
+    color:#51626D;
+  }
+  .value-card .num{
+    position:absolute;
+    top:20px;right:24px;
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:900;
+    font-size:13px;
+    color:#B9D7E4;
+  }
+
+  /* ===== 進め方 ===== */
+  .flow{
+    background:linear-gradient(180deg,var(--navy-deep),var(--navy));
+    color:var(--white);
+  }
+  .flow .section-head h2{color:var(--white);}
+  .flow .section-head p{color:#B9D7E4;}
+  .flow .section-tag{color:var(--water-light);}
+  .timeline{
+    position:relative;
+    padding-left:36px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:11px;top:6px;bottom:6px;
+    width:4px;
+    background:repeating-linear-gradient(180deg,var(--water) 0 16px, rgba(255,255,255,0.15) 16px 24px);
+    border-radius:4px;
+  }
+  .t-item{
+    position:relative;
+    padding-bottom:48px;
+  }
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-36px;
+    top:2px;
+    width:24px;height:24px;
+    border-radius:50%;
+    background:var(--copper);
+    border:4px solid var(--navy-deep);
+    box-shadow:0 0 0 2px var(--water-light);
+  }
+  .t-item .t-phase{
+    font-size:12px;
+    letter-spacing:0.12em;
+    color:var(--water-light);
+    font-family:'Noto Sans JP',sans-serif;
+    margin-bottom:6px;
+  }
+  .t-item h3{
+    color:var(--white);
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .t-item p{
+    color:#C4DCE9;
+    font-size:14.5px;
+    max-width:620px;
+  }
+
+  /* ===== クロージング ===== */
+  .closing{
+    background:var(--white);
+    text-align:center;
+    position:relative;
+  }
+  .closing-card{
+    background:linear-gradient(135deg,var(--navy) 0%, #15476F 100%);
+    border-radius:24px;
+    padding:70px 40px;
+    color:var(--white);
+    position:relative;
+    overflow:hidden;
+  }
+  .closing-card::before{
+    content:"";
+    position:absolute;
+    width:300px;height:300px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.15);
+    top:-120px;right:-80px;
+  }
+  .closing-card::after{
+    content:"";
+    position:absolute;
+    width:200px;height:200px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.1);
+    bottom:-100px;left:-60px;
+  }
+  .closing h2{
+    color:var(--white);
+    font-size:clamp(22px,3.4vw,32px);
+    margin-bottom:20px;
+    position:relative;
+    z-index:1;
+  }
+  .closing p{
+    color:#CFE6F0;
+    max-width:520px;
+    margin:0 auto 34px;
+    position:relative;
+    z-index:1;
+    font-size:15px;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--copper);
+    color:var(--white);
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:700;
+    padding:18px 48px;
+    border-radius:999px;
+    font-size:15.5px;
+    letter-spacing:0.04em;
+    position:relative;
+    z-index:1;
+    box-shadow:0 14px 30px -10px rgba(201,123,74,0.6);
+    transition:transform .2s ease;
+  }
+  .cta-btn:hover{transform:translateY(-3px);}
+  .foot-note{
+    margin-top:50px;
+    font-size:13px;
+    color:#8FA6B2;
+    letter-spacing:0.03em;
+  }
+
+  footer{
+    padding:36px 0;
+    text-align:center;
+    font-size:12.5px;
+    color:#9AAFBA;
+    background:var(--white);
+  }
+
+  @media (max-width:860px){
+    .value-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:640px){
+    .hero{padding:100px 0 60px;}
+    section{padding:70px 0;}
+    .value-grid{grid-template-columns:1fr;}
+    .quote-card{padding:30px;}
+    .closing-card{padding:50px 24px;}
+    .pipeline{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="ripple r1"></div>
+  <div class="ripple r2"></div>
+  <div class="ripple r3"></div>
+  <div class="ripple r4"></div>
+  <div class="ripple r5"></div>
+  <div class="pipeline"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">KAIROS PROPOSAL / WEB CONSTRUCTION TEAM</div>
+    <h1>水道・配管というインフラの誠実さを、<br><span>そのままWebの信頼感に変える。</span></h1>
+    <p class="lead">
+      熊本の暮らしと産業の水まわりを支えてこられた御社の歩みを、コーポレートサイトという"もう一つの現場"で、
+      正確に・安全に・そして魅力的に作り直すご提案です。
+    </p>
+    <p class="lead">
+      WordPress（TCD GENESIS）への移行、ドメイン・DNSの安全な切り替え、採用ページの新設まで。
+      Kairosが一貫して設計・施工いたします。
+    </p>
+    <div class="from">Proposed by <strong>Kairos</strong>｜Web制作・システム開発チーム</div>
+  </div>
+</section>
+
+<!-- ===== 理解セクション ===== -->
+<section class="understand">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">UNDERSTANDING THE PROJECT</div>
+      <h2>今回のご依頼、私たちはこう受け止めています。</h2>
+    </div>
+    <div class="quote-card">
+      <div class="quote-mark">“</div>
+      <p>
+        卸売業は、表に立つ仕事ではありません。けれど、水道管一本・住宅設備一台の向こうには、
+        熊本の暮らしや現場を支えてきた確かな実績があります。その"見えない信頼"を、
+        求職者や取引先に見える形で伝えたい——それが今回のリニューアルの核心だと理解しています。
+      </p>
+      <p>
+        同時に、今回特に重視されているのは「移行の安全性」。他社CMSから WordPress（TCD GENESIS）へ、
+        ドメインとメールを止めずに切り替えること。これはデザインの前に、まず技術的な信頼が問われる工程です。
+        Kairosは、この2つの要望——<strong>「魅力の発信」と「安全な移行」</strong>——を、
+        片方に偏らせず同時に満たすご提案をいたします。
+      </p>
+      <div class="keyword-row">
+        <span>企業イメージの向上</span>
+        <span>採用活動の強化</span>
+        <span>TCD GENESIS指定</span>
+        <span>CMS移行の安全性</span>
+        <span>ドメイン・DNS・メール維持</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 価値セクション ===== -->
+<section class="values">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">WHAT KAIROS CAN DO</div>
+      <h2>Kairosがご提供できる価値</h2>
+      <p>単に「作る」のではなく、御社の信頼を正しく伝える設計から、移行後の安心まで並走します。</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="num">01</div>
+        <div class="valve"></div>
+        <h3>卸売業の信頼感を伝えるデザイン提案</h3>
+        <p>TCD GENESISの柔軟なレイアウトを活かし、事業内容・取扱商品・施工実績を「誠実さ」が伝わる構成に再設計。既存サイトの単純移植ではなく、情報設計から見直します。</p>
+      </div>
+      <div class="value-card">
+        <div class="num">02</div>
+        <div class="valve"></div>
+        <h3>止めない・壊さない移行対応</h3>
+        <p>既存CMS・ドメイン・サーバー環境を事前調査し、DNS設定・SSL・メール維持・リダイレクト設計まで含めた移行計画を立案。テスト環境での検証を経て、安全に本番切り替えを行います。</p>
+      </div>
+      <div class="value-card">
+        <div class="num">03</div>
+        <div class="valve"></div>
+        <h3>採用に効く採用ページ設計</h3>
+        <p>会社の魅力・仕事内容・働く環境・社員紹介・募集要項を、求職者の意思決定フローに沿って構成。応募導線までを一体で設計し、採用活動の実効性を高めます。</p>
+      </div>
+      <div class="value-card">
+        <div class="num">04</div>
+        <div class="valve"></div>
+        <h3>表示速度・SEO・セキュリティの基盤整備</h3>
+        <p>WordPress初期設定からTCD GENESISのカスタマイズ、基本的なSEO対策、セキュリティ設定まで、公開後の運用に耐える堅実な技術基盤を構築します。</p>
+      </div>
+      <div class="value-card">
+        <div class="num">05</div>
+        <div class="valve"></div>
+        <h3>納品後も伴走する運用サポート</h3>
+        <p>管理画面の操作説明・更新マニュアルの整備に加え、初期不具合対応や公開後のご相談にも対応。長期的な運用パートナーとしてお付き合いいたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 進め方 ===== -->
+<section class="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">PROCESS &amp; SCHEDULE</div>
+      <h2>進め方・スケジュールイメージ</h2>
+      <p>配管工事と同じく、Web移行も「確認・計画・施工・検査」の積み重ねです。各工程を丁寧に進めます。</p>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-phase">STEP 01｜目安 1〜2週間</div>
+        <h3>現状調査・ヒアリング</h3>
+        <p>既存CMS・ドメイン・サーバー・メール環境を調査。企業の強み、採用課題、発信したい情報をヒアリングし、要件を整理します。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-phase">STEP 02｜目安 2〜3週間</div>
+        <h3>デザイン・構成提案</h3>
+        <p>トップページ・下層ページ・採用ページの構成案とデザイン案をご提示。TCD GENESISの機能を踏まえた具体的なレイアウトをご確認いただきます。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-phase">STEP 03｜目安 3〜4週間</div>
+        <h3>WordPress構築・コンテンツ移行</h3>
+        <p>TCD GENESISのセットアップ・カスタマイズ、各ページの実装、既存コンテンツの移行・整理、フォーム設置、SEO・セキュリティの基本設定を行います。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-phase">STEP 04｜目安 1〜2週間</div>
+        <h3>テスト・安全な切り替え</h3>
+        <p>テスト環境での動作確認後、バックアップを取得した上でDNS・SSL設定、リダイレクト設定を実施し、メール等への影響がないことを確認しながら本番切り替えを行います。</p>
+      </div>
+      <div class="t-item">
+        <div class="t-phase">STEP 05｜公開後</div>
+        <h3>公開・運用サポート</h3>
+        <p>動作確認・初期不具合対応に加え、管理画面の操作レクチャーと更新マニュアルをご提供。公開後も安心してご運用いただけるよう伴走します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== クロージング ===== -->
+<section class="closing">
+  <div class="wrap">
+    <div class="closing-card">
+      <h2>まずは現状のサイトとドメイン環境を、<br>一緒に確認するところから始めませんか。</h2>
+      <p>
+        具体的なお見積もり・お打ち合わせの前に、現状のCMS・ドメイン・サーバー構成を拝見させていただくだけでも、
+        移行の進め方はより明確になります。Kairosがその最初の一歩を、丁寧にご一緒します。
+      </p>
+      <a href="#" class="cta-btn">Kairosに相談・見積もりを依頼する</a>
+      <div class="foot-note">ご提案内容・概算費用・納期は個別にお見積もりいたします。</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Kairos — Web制作・システム開発チーム｜本提案は貴社案件に基づき作成したオリジナルプランです。
+</footer>
+
+</body>
+</html>
